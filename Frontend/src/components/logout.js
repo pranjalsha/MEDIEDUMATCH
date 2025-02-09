@@ -14,12 +14,6 @@ const Logout = () => {
     }, 3000);
   }, [logout, navigate]);
 
-  // return (
-  //   <div className="logout-main">
-  //     <h1>Logout Successful!</h1>
-  //     <p>You will be redirected to the home page...</p>
-  //   </div>
-  // );
 
   return null;
 };

@@ -1,22 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "../assets/images/surgical-item-500x500.webp";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import Logo from "../assets/images/logo.png";
-// import GoogleSvg from "../assets/images/icons8-google.svg";
-import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import "../css/register.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-// import { NavLink, useNavigate } from "react-router-dom";
 
-const Register = ({ setislogged }) => {
-  // const [showPassword, setShowPassword] = useState(false);
-  // const navigate = useNavigate();
-  // const [isOtpSent, setIsOtpSent] = useState(false);
-  // const [otp, setOtp] = useState('');
-  // const [email, setEmail] = useState(''); // State to hold email
 
+const Register = () => {
+  
   const [check, setCheck] = useState(false);
   let navigate = useNavigate();
   const [showpass, setshowpass] = useState(false);
@@ -48,7 +40,7 @@ const Register = ({ setislogged }) => {
     }
     setIsLoading(true);
     formData.name = formData.firstname + " " + formData.lastname;
-    // console.log("hhhhhhh");
+   
     await axios
       .post("http://localhost:8080/register", formData)
       .then((res) => {
@@ -57,7 +49,7 @@ const Register = ({ setislogged }) => {
       })
       .catch((e) => {
         toast.error("Something went wrong while sending otp");
-        // console.log(e);
+       
       });
 
     setIsLoading(false);
@@ -77,16 +69,16 @@ const Register = ({ setislogged }) => {
         `http://localhost:8080/verify-account?email=${formData.email}&otp=${formData.otp}`,
         formData
       );
-      // console.log(formData);
+    
       if (response.status === 200) {
-        // console.log(response);
+       
         navigate("/login");
         toast.success("Account created successfully!!!");
       } else {
         throw new Error("Failed to verify account");
       }
     } catch (e) {
-      // console.log(e);
+      
       toast.error("Something went wrong, please try again later");
     }
   }
@@ -105,78 +97,6 @@ const Register = ({ setislogged }) => {
     }
   }
 
-  // const [accountType,setaccountType]=useState('student')
-
-  // const handleRegisterSubmit = async (e) => {
-  //   e.preventDefault();
-  //   if (!isOtpSent) {
-  //     let name = e.target.name.value;
-  //     let password = e.target.password.value;
-  //     let confirmPassword = e.target.confirmPassword.value;
-
-  //     setEmail(e.target.email.value); // Set email state
-
-  //     if (password.length > 0 && confirmPassword.length > 0) {
-  //       if (password === confirmPassword) {
-  //         try {
-  //           const formData = { email, password };
-  //           const response = await axios.post(
-  //             "http://localhost:8080/student/register",
-  //             formData
-  //           );
-  //           toast.success("Email sent for verification!");
-  //           setIsOtpSent(true); // Change state to show OTP input and change button
-  //         } catch (err) {
-  //           toast.error(err.message);
-  //         }
-  //       } else {
-  //         toast.error("Passwords don't match");
-  //       }
-  //     } else {
-  //       toast.error("Please fill all inputs");
-  //     }
-  //   } else {
-  //     // Verify OTP
-  //     try {
-  //       const response = await axios.post(
-  //         "http://localhost:8080/student/verify-account",
-  //         { email, otp }
-  //       );
-  //       if (response.data.success) {
-  //         toast.success("OTP verified successfully! Registration complete.");
-  //         navigate("/login"); // Navigate to the login page after successful registration
-  //       } else {
-  //         toast.error("Invalid OTP, please try again.");
-  //       }
-  //     } catch (err) {
-  //       toast.error(
-  //         err.response
-  //              ? err.response.data.message
-  //           : "An error occurred while verifying OTP."
-  //       );
-  //     }
-  //   }
-  // };
-
-  // const handleResendOtp = async () => {
-  //   try {
-  //     const response = await axios.post(
-  //       "http://localhost:8080/student/regenerate-otp",
-  //       { email }
-  //     );
-  //     toast.success("OTP resent successfully!");
-  //   } catch (err) {
-  //     toast.error(err.response.data.message);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   if (token !== "") {
-  //     toast.success("You already logged in");
-  //     navigate("/dashboard");
-  //   }
-  // }, [token, navigate]);
-
   return (
     <div className="register-main bg-secondary">
       <div className="register-left">
@@ -184,7 +104,7 @@ const Register = ({ setislogged }) => {
       </div>
       <div className="register-right">
         <div className="register-right-container">
-          <div className="register-logo">{/* <img src={Logo} alt="" /> */}</div>
+          <div className="register-logo"></div>
           <div className="register-center">
             <h2>Welcome to MediEduMatch!</h2>
             <p>Please enter your details</p>
@@ -197,8 +117,7 @@ const Register = ({ setislogged }) => {
                 onChange={changeHandler}
                 placeholder="Enter First Name"
                 value={formData.firstname}
-                //       className="bg-richblack-800 rounded-[0.5rem] text-richblack-5
-                // w-full p-[12px]"
+                
               />
               <input
                 type="text"
@@ -208,8 +127,7 @@ const Register = ({ setislogged }) => {
                 onChange={changeHandler}
                 placeholder="Enter Last Name"
                 value={formData.lastname}
-                //       className="bg-richblack-800 rounded-[0.5rem] text-richblack-5
-                // w-full p-[12px]"
+                
               />
               <input
                 type="email"
@@ -219,8 +137,7 @@ const Register = ({ setislogged }) => {
                 onChange={changeHandler}
                 placeholder="Enter Email Address"
                 value={formData.email}
-                //       className="bg-richblack-800 rounded-[0.5rem] text-richblack-5
-                // w-full p-[12px]"
+               
               />
               <div className="pass-input-div">
                 <input
@@ -231,22 +148,9 @@ const Register = ({ setislogged }) => {
                   onChange={changeHandler}
                   placeholder="Enter Password"
                   value={formData.password}
-                  //       className="bg-richblack-800 rounded-[0.5rem] text-richblack-5
-                  // w-full p-[12px]"
+                 
                 />
-                {/* {showpass ? (
-                  <FaEyeSlash
-                    onClick={() => {
-                      setShowPassword(!showpass);
-                    }}
-                  />
-                ) : (
-                  <FaEye
-                    onClick={() => {
-                      setShowPassword(!showPassword);
-                    }}
-                  />
-                )} */}
+               
                 <span
                   onClick={() => {
                     setshowpass((prev) => !prev);
@@ -270,22 +174,9 @@ const Register = ({ setislogged }) => {
                   onChange={changeHandler}
                   placeholder="Confirm Password"
                   value={formData.confirmPassword}
-                  //       className="bg-richblack-800 rounded-[0.5rem] text-richblack-5
-                  // w-full p-[12px]"
+                  
                 />
-                {/* {showPassword ? (
-                  <FaEyeSlash
-                    onClick={() => {
-                      setShowPassword(!showPassword);
-                    }}
-                  />
-                ) : (
-                  <FaEye
-                    onClick={() => {
-                      setShowPassword(!showPassword);
-                    }}
-                  />
-                )} */}
+                
                 <span
                   onClick={() => {
                     setshowcomfirmpass((prevc) => !prevc);
@@ -299,25 +190,7 @@ const Register = ({ setislogged }) => {
                   )}
                 </span>
               </div>
-              {/* {isOtpSent ? (
-                <>
-                  <input
-                    type="text"
-                    placeholder="Enter OTP"
-                    value={otp}
-                    onChange={(e) => setOtp(e.target.value)}
-                    required={true}
-                  />
-                  <button type="submit">Verify OTP and Register</button>
-                  <button type="button" onClick={handleResendOtp}>
-                    Resend OTP
-                  </button>
-                </>
-              ) : (
-                <div className="register-center-buttons">
-                  <button type="submit">Sign Up</button>
-                </div>
-              )} */}
+             
               {check ? (
                 <div>
                   <label className="w-full otp-label">

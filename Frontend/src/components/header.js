@@ -3,11 +3,11 @@ import Tour from 'reactour';
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { useUser } from "../context/UserContext";
+
 import { useNavigate, Link } from "react-router-dom";
 import {jwtDecode} from 'jwt-decode';
 import { useAuth } from "../context/AuthContext";
-import logout from "../components/logout";
+
 import "../css/header.css";
 
 function Header() {
@@ -16,7 +16,7 @@ function Header() {
   const [isTourOpen, setIsTourOpen] = useState(false);
 
   useEffect(() => {
-    // Open the tour automatically on component mount
+    
     setIsTourOpen(true);
   }, []);
 
@@ -94,9 +94,7 @@ function Header() {
               >
                 Rank Predictor
               </Nav.Link>
-              <Nav.Link as={Link} id="team" className="links" style={{ marginLeft: "30px" }} to="/teams">
-                Teams
-              </Nav.Link>
+              
               <Nav.Link
                 as={Link}
                 id="contact"
@@ -134,7 +132,7 @@ function Header() {
         steps={steps}
         isOpen={isTourOpen}
         onRequestClose={() => setIsTourOpen(false)}
-        accentColor="#ff6347"  // Customize the accent color to match your theme
+        accentColor="#ff6347"  
       />
     </>
   );

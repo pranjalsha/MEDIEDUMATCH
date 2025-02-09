@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 function CollegeList({domicileState,cat,neetScore}) {
-    const [data, setData] = useState([]);
-    const [error, setError] = useState(null); // Add error state
+    const [error, setError] = useState(null); 
 
     const [jsonData,setJsonData]=useState([])
 let json
@@ -25,9 +24,8 @@ let json
 
     return (
         <div className='collegelist' style={{ position:'absolute', top:'10%',width:'100vw'}} >
-            {error && <p>{error}</p>} {/* Display error message */}
-            {/* <button onClick={fetchData}>Fetch Data</button> */}
-            {/* Rest of the code */}
+            {error && <p>{error}</p>} 
+          
             <table border={1} id='list2'  >
                 <thead>
                     <tr>

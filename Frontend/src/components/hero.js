@@ -4,7 +4,7 @@ import College from './College';
 import About from './about';
 import { useEffect } from 'react';
 import { useUser } from '../context/UserContext';
-import { Link } from 'react-router-dom'; // Import Link
+import { Link } from 'react-router-dom'; 
 
 var data = [
   {
@@ -55,7 +55,7 @@ function Home() {
                 <Carousel.Caption>
                   <h2 style={{color:"white"}}>{hero.title}</h2>
                   <p style={{color:"white"}}>{hero.description}</p>
-                  {/* <a className="btn btn-primary" href={hero.link}>Learn More <i className="fas fa-chevron-right"></i></a> */}
+                 
                   <Link to={hero.link} className="btn btn-primary">Learn More <i className="fas fa-chevron-right"></i></Link>
                 </Carousel.Caption>
               </Carousel.Item>

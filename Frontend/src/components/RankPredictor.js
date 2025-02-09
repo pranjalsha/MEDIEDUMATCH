@@ -1,11 +1,8 @@
 import { useState } from 'react'
-// import PhoneInput from 'react-phone-number-input/input'
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import CollegeList from './CollegeList';
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
+
 
 function RankPredictor() {
     const [yes,setYes]=useState(true);
@@ -19,11 +16,7 @@ function RankPredictor() {
       setNeetScore(e.target.value);
     };
   
-    const handlePhoneChange = (e) => {
-      setPhone(e.target.value);
-      console.log(phone);
-    };
-  //  let cat
+ 
     const handleCategoryChange = (e) => {
       setCategory(e.target.value);
       let newCat;

@@ -26,7 +26,7 @@ Follow the steps below to set up and run MediEduMatch locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/abhay9494/Mediedumatch.git
+   git clone https://github.com/pranjalsha/MEDIEDUMATCH.git
    ```
 
 2. Navigate to the `Frontend` folder:
@@ -54,17 +54,6 @@ The server should now be running, and you can access the application in your bro
 
 ---
 
-## Contributors
-- **Abhay** (Lead Developer)  
-  - **GitHub**: [abhay9494](https://github.com/abhay9494)  
-  - **Email**: abhayprasad9494@gmail.com  
-
-- **Pranjal Sharma**  
-  - **GitHub**: [pranjalsha](https://github.com/pranjalsha)  
-  - **Email**: pranjalsharma013350@gmail.com
-
----
-
 ## Contributing
 
 Contributions are welcome! Please follow these steps:
@@ -80,6 +69,6 @@ Contributions are welcome! Please follow these steps:
 
 For any queries or feedback, feel free to reach out:
 
-- **Email**: [abhayprasad9494@gmail.com]  
-- **GitHub**: [https://github.com/abhay9494](https://github.com/abhay9494)
+- **Email**: [pranjalsharma013350@gmail.com]  
+- **GitHub**: [https://github.com/pranjalsha](https://github.com/pranjalsha)
 

@@ -1,4 +1,3 @@
-// src/context/UserContext.js
 import React, { createContext, useState, useContext, useEffect } from "react";
 
 const UserContext = createContext(null);
@@ -9,7 +8,7 @@ export const UserProvider = ({ children }) => {
   );
 
   useEffect(() => {
-    // Sync user state with localStorage
+
     localStorage.setItem("user", JSON.stringify(user));
   }, [user]);
 

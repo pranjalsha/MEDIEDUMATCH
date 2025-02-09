@@ -6,53 +6,16 @@ import { toast } from "react-toastify";
 
 const Contact = () => {
   const [name, setName] = useState("");
-  // const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone_no, setPhone] = useState("");
   const [message, setMessage] = useState("");
-  // const [emailError, setEmailError] = useState("");
-  // const [nameError, setNameError] = useState("");
-  // const [lastNameError, setLastNameError] = useState("");
-  // const [showPopup, setShowPopup] = useState(false);
 
   const navigate = useNavigate();
-
-  // const handleNameChange = (e) => {
-  //   setName(e.target.value);
-  //   if (!e.target.value.trim()) {
-  //     setNameError("Name is required");
-  //   } else {
-  //     setNameError("");
-  //   }
-  // };
-
   const handleNameBlur = (e) => {
     if (!e.target.value.trim()) {
       toast.error("Name is required");
     }
   };
-
-  // const handleLastNameChange = (e) => {
-  //   setLastName(e.target.value);
-  //   if (!e.target.value.trim()) {
-  //     setLastNameError("Last Name is required");
-  //   } else {
-  //     setLastNameError("");
-  //   }
-  // };
-
-  // const handleEmailChange = (e) => {
-  //   setEmail(e.target.value);
-  //   setEmailError("");
-  // };
-
-  // const handleEmailBlur = () => {
-  //   if (!email.trim()) {
-  //     setEmailError("Email is required");
-  //   } else if (!/^\S+@\S+\.\S+$/.test(email)) {
-  //     setEmailError("Email is invalid");
-  //   }
-  // };
 
   const handleEmailBlur = (e) => {
     if (!e.target.value.trim()) {
@@ -62,9 +25,6 @@ const Contact = () => {
     }
   };
 
-  // const handlePhoneChange = (e) => {
-  //   setPhone(e.target.value);
-  // };
 
   const handlePhoneBlur = (e) => {
     if (!e.target.value.trim()) {
@@ -72,9 +32,7 @@ const Contact = () => {
     }
   };
 
-  // const handleMessageChange = (e) => {
-  //   setMessage(e.target.value);
-  // };
+
 
   const handleMessageBlur = (e) => {
     if (!e.target.value.trim()) {
@@ -186,18 +144,13 @@ const Contact = () => {
                     placeholder="Name"
                     name="name"
                     value={name}
-                    // onChange={handleNameChange}
+                    
                     onChange={(e) => setName(e.target.value)}
                     onBlur={handleNameBlur}
                   />
-                  {/* {nameError && (
-                    <span className="error">{nameError}</span>
-                  )} */}
+                 
                 </div>
-                {/* <div className="form-group">
-                  <input type="text" className="lname" placeholder="Last Name" value={lastName} onChange={handleLastNameChange} />
-                  {lastNameError && <span className="error">{lastNameError}</span>}
-                </div> */}
+              
                 <div className="form-group">
                   <input
                     type="email"
@@ -205,22 +158,21 @@ const Contact = () => {
                     placeholder="Mail"
                     name="email"
                     value={email}
-                    // onChange={handleEmailChange}
-                    // onBlur={handleEmailBlur}
+                   
                     onChange={(e) => setEmail(e.target.value)}
                     onBlur={handleEmailBlur}
                   />
-                  {/* {emailError && <span className="error">{emailError}</span>} */}
+                  
                 </div>
                 <div className="form-group">
                   <input
                     type="number"
-                    // inputmode="numeric"
+                    
                     className="phone"
                     placeholder="Phone"
                     name="phone_no"
                     value={phone_no}
-                    // onChange={handlePhoneChange}
+                    
                     onChange={(e) => setPhone(e.target.value)}
                     onBlur={handlePhoneBlur}
                   />
@@ -231,7 +183,7 @@ const Contact = () => {
                     id=""
                     placeholder="Write your message"
                     value={message}
-                    // onChange={handleMessageChange}
+                    
                     onChange={(e) => setMessage(e.target.value)}
                     onBlur={handleMessageBlur}
                   ></textarea>

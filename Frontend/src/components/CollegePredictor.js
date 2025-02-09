@@ -1,8 +1,4 @@
-import { useEffect, useState } from 'react'
-// import React, { useState } from 'react';
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './CollegePredictor1.css'
+import { useState } from 'react'
 import CollegeList from './CollegeList.js';
 
 function CollegePredictor() {
@@ -19,7 +15,6 @@ function CollegePredictor() {
   const handleGenderChange = (e) => {
     setGender(e.target.value);
   };
-//  let cat
   const handleCategoryChange = (e) => {
     setCategory(e.target.value);
     let newCat;
@@ -34,7 +29,6 @@ function CollegePredictor() {
       newCat = 'st_rank';
     }
     setCat(newCat)
-    // console.log(cat);
   };
 
   const handleDomicileStateChange = (e) => {
@@ -42,13 +36,6 @@ function CollegePredictor() {
     console.log(domicileState);
   };
 
-  const handlePredictForOtherExams = () => {
-    // Logic for predicting other exam results
-  };
-
-  const handlePredictResults = () => {
-    // Logic for predicting current exam results
-  };
   const [jsonData,setJsonData]=useState([])
 let json
   const fetchData = async () => {
@@ -64,10 +51,6 @@ let json
    
   };
 
-
-
- 
-  // document.querySelector('body').innerHTML=CollegeList();
   return(
 <>
 
@@ -135,7 +118,7 @@ let json
    <option value="OBC" name='obc_ranc'>OBC</option>
    <option value="SC" name='sc_rank'>SC</option>
    <option value="ST" name='st_rank'>ST</option>
-   {/* Add other category options as needed */}
+   
  </select>
 </div>
 
@@ -177,17 +160,13 @@ let json
             <option value="Uttar Pradesh">Uttar Pradesh</option>
             <option value="Uttarakhand">Uttarakhand</option>
             <option value="West Bengal">West Bengal</option>
-            {/* Add other state options as needed */}
+            
           </select>
         </div>
       </div>
 
       <div className="button-group">
-        {/* <button onClick={handlePredictForOtherExams} className="predict-other-exams-button">
-          Predict For Other Exams
-        </button> */}
         <button onClick={()=>{
-            // fetchData();
          setYes(true)}}
          className="predict-results-button">
           Predict Results
@@ -196,7 +175,6 @@ let json
     </div>
       }
     </>
-    // </CollegeList>
   )
 }
 
